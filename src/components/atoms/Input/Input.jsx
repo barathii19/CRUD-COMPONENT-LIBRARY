@@ -6,13 +6,13 @@ const InputControl = ({
     type,
     id,
     onChange,
-    name,
     onBlur,
     onFocus,
     required,
     validatePassword,
     disabled,
-    backgroundColor
+    backgroundColor,
+    width,
 }) => {
     const [inputValue, setInputValue] = useState("")
     const [isFocused, setIsFocused] = useState(false)
@@ -43,18 +43,19 @@ const InputControl = ({
     }
 
   return (
-    <StyledWrapper backgroundColor={backgroundColor}>
+    <StyledWrapper backgroundColor={backgroundColor} width={width} >
         <div className={`form-floating ${isFocused || inputValue ? "active" : ""}`}>
             <input 
             type={type}
             className='form-control'
             id={id}
+            value={inputValue}
             onChange={handleInputChange}
             onFocus={handleInputFocus}
             onBlur={handleInputBlur}
             disabled={disabled}
             />
-            <label>
+            <label >
                 {label} {required && <span style={{color: "red"}}>*</span>}
             </label>
             {

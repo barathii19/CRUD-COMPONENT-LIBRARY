@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-const  StyledWrapper = styled.div`
+const StyledWrapper = styled.div`
 .form-floating{
     position: relative;
     margin-bottom: 20px;
 }
 .form-control{
-    width: 94%;
+    width: ${(props) => props.width};
     padding: 10px;
     border: 1px solid black;
     outline: none;
